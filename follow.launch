@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Include the MAVROS node with SITL and Gazebo -->
+	<include file="$(find mavros)/launch/px4.launch">
+	</include>
+
+	<!-- Our node to control the drone -->
+	<node pkg="offboardcontrol" type="rx.py" name="rx" required="true" output="screen" />
+	<node pkg="offboardcontrol" type="follow.py" name="follow" required="true" output="screen" />
+
+</launch>
